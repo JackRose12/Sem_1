@@ -1,27 +1,26 @@
 #include <stdio.h>
 
 int main() {
-    int n, i, j;
-    int start, val;
+    int rows, cols, i, j;
 
+    // user input
     printf("Enter number of rows: ");
-    scanf("%d", &n);
+    scanf("%d", &rows);
 
-    for (i = 1; i <= n; i++) {
+    printf("Enter number of columns: ");
+    scanf("%d", &cols);
 
-        // start value changes every 2 rows
-        if ( ((i - 1) / 2) % 2 == 0 )
-            start = 1;
-        else
-            start = 0;
+    // print hollow rectangle
+    for (i = 1; i <= rows; i++) {
+        for (j = 1; j <= cols; j++) {
 
-        val = start;
-
-        for (j = 1; j <= i; j++) {
-            printf("%d", val);
-            val = 1 - val;  // alternate 1 and 0
+            // print * for boundary rows and columns
+            if (i == 1 || i == rows || j == 1 || j == cols) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
         }
-
         printf("\n");
     }
 
