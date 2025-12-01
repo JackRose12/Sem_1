@@ -1,24 +1,21 @@
 #include <stdio.h>
 
 int main() {
-    int rows, cols, i, j;
+    int n, i, j;
 
     // user input
     printf("Enter number of rows: ");
-    scanf("%d", &rows);
+    scanf("%d", &n);
 
-    printf("Enter number of columns: ");
-    scanf("%d", &cols);
+    // print hollow triangle
+    for (i = 1; i <= n; i++) {
+        for (j = 1; j <= i; j++) {
 
-    // print hollow rectangle
-    for (i = 1; i <= rows; i++) {
-        for (j = 1; j <= cols; j++) {
-
-            // print * for boundary rows and columns
-            if (i == 1 || i == rows || j == 1 || j == cols) {
-                printf("*");
+            // boundary conditions
+            if (j == 1 || j == i || i == n) {
+                printf("*");   // boundary stars
             } else {
-                printf(" ");
+                printf(" ");   // inside space
             }
         }
         printf("\n");
